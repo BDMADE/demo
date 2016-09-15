@@ -56,7 +56,12 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "demo_#{Rails.env}"
   config.action_mailer.perform_caching = false
-config.middleware.use Rack::Cache, :verbose => true, :metastore   => 'file:/var/cache/rack/meta', :entitystore => 'file:/var/cache/rack/body',:allow_reload => false,:allow_revalidate => false,
+  config.middleware.use Rack::Cache, 
+  :verbose => true, 
+  :metastore   => 'file:/var/cache/rack/meta', 
+  :entitystore => 'file:/var/cache/rack/body',
+  :allow_reload => false,
+  :allow_revalidate => false
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
